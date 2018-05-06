@@ -18,3 +18,11 @@ class DetailView(generic.DetailView):
 class AlbumCreate(CreateView):
     model = Album
     fields = ['artist', 'album_title', 'genre', 'album_logo']
+
+class AlbumCreate(UpdateView):
+    model = Album
+    fields = ['artist', 'album_title', 'genre', 'album_logo']
+
+class AlbumDelete(DeleteView):
+    model = Album
+    success_url = reversed('music:index')
